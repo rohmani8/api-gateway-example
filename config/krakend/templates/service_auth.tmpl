@@ -1,0 +1,137 @@
+{{define "AuthService"}}
+{
+    "endpoint": "/api/auth/tokens",
+    "method": "POST",
+    "output_encoding": "json",
+    "backend": [
+    {
+        "url_pattern": "/api/v1/auth/tokens",
+        "encoding": "json",
+        "sd": "static",
+        "method": "POST",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/auth/tokens",
+    "method": "PUT",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+        {
+            "url_pattern": "/api/v1/auth/tokens",
+            "encoding": "json",
+            "sd": "static",
+            "method": "PUT",
+            "disable_host_sanitize": true
+        }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/auth/verify_token",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+        {
+            "url_pattern": "/api/v1/windows/user/{JWT.AD_User_ID}",
+            "encoding": "json",
+            "sd": "static",
+            "method": "GET",
+            "disable_host_sanitize": true
+        }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/auth/language/{id}",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+        {
+            "url_pattern": "/api/v1/auth/language?client={id}",
+            "encoding": "json",
+            "sd": "static",
+            "method": "GET",
+            "disable_host_sanitize": true
+        }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/auth/roles/{id}",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+        {
+            "url_pattern": "/api/v1/auth/roles?client={id}",
+            "encoding": "json",
+            "sd": "static",
+            "method": "GET",
+            "disable_host_sanitize": true
+        }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/auth/organizations/{client}/{role}",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+        {
+            "url_pattern": "/api/v1/auth/organizations?client={client}&role={role}",
+            "encoding": "json",
+            "sd": "static",
+            "method": "GET",
+            "disable_host_sanitize": true
+        }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/auth/warehouses/{client}/{role}/{org}",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+        {
+            "url_pattern": "/api/v1/auth/warehouses?client={client}&role={role}&organization={org}",
+            "encoding": "json",
+            "sd": "static",
+            "method": "GET",
+            "disable_host_sanitize": true
+        }
+    ],
+    "input_query_strings": []
+}
+{{end}}

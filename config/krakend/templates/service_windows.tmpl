@@ -1,0 +1,142 @@
+{{define "WindowService"}}
+{
+    "endpoint": "/api/{window}",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/{window}/{id}",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}/{id}",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/{window}/tabs",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}/tabs",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/{window}/fields",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/fields",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/{window}",
+    "method": "POST",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}",
+        "encoding": "json",
+        "sd": "static",
+        "method": "POST",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/{window}/{id}",
+    "method": "PUT",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/{id}",
+        "encoding": "json",
+        "sd": "static",
+        "method": "PUT",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/template/{id}",
+    "method": "DELETE",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/{id}",
+        "encoding": "json",
+        "sd": "static",
+        "method": "DELETE",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+}
+{{ end }}
