@@ -55,7 +55,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/auth/language/{id}",
+    "endpoint": "/api/auth/setup",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
@@ -65,73 +65,38 @@
     ],
     "backend": [
         {
-            "url_pattern": "/api/v1/auth/language?client={id}",
+            "url_pattern": "/api/v1/auth/language",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
-        }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/auth/roles/{id}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
+        },
         {
-            "url_pattern": "/api/v1/auth/roles?client={id}",
+            "url_pattern": "/api/v1/auth/roles",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
-        }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/auth/organizations/{client}/{role}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
+        },
         {
-            "url_pattern": "/api/v1/auth/organizations?client={client}&role={role}",
+            "url_pattern": "/api/v1/auth/organizations",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
-        }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/auth/warehouses/{client}/{role}/{org}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
+        },
         {
-            "url_pattern": "/api/v1/auth/warehouses?client={client}&role={role}&organization={org}",
+            "url_pattern": "/api/v1/auth/warehouses",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
         }
     ],
-    "input_query_strings": []
+    "input_query_strings": [
+        "client",
+        "role",
+        "organization"
+    ]
 }
 {{end}}

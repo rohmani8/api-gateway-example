@@ -80,7 +80,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/auth/language/{id}",
+    "endpoint": "/api/auth/setup",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -95,94 +95,44 @@
     ],
     "backend": [
         {
-            "url_pattern": "/api/v1/auth/language?client={id}",
+            "url_pattern": "/api/v1/auth/language",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
-        }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/auth/roles/{id}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
+        },
         {
-            "url_pattern": "/api/v1/auth/roles?client={id}",
+            "url_pattern": "/api/v1/auth/roles",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
-        }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/auth/organizations/{client}/{role}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
+        },
         {
-            "url_pattern": "/api/v1/auth/organizations?client={client}&role={role}",
+            "url_pattern": "/api/v1/auth/organizations",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
-        }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/auth/warehouses/{client}/{role}/{org}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
+        },
         {
-            "url_pattern": "/api/v1/auth/warehouses?client={client}&role={role}&organization={org}",
+            "url_pattern": "/api/v1/auth/warehouses",
             "encoding": "json",
             "sd": "static",
             "method": "GET",
             "disable_host_sanitize": true
         }
     ],
-    "input_query_strings": []
+    "input_query_strings": [
+        "client",
+        "role",
+        "organization"
+    ]
 }
 ,
 
 {
-    "endpoint": "/api/asset-groups",
+    "endpoint": "/api/{window}",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -197,7 +147,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group",
+        "url_pattern": "/api/v1/windows/{window}",
         "encoding": "json",
         "sd": "static",
         "method": "GET",
@@ -207,7 +157,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/asset-groups/{id}",
+    "endpoint": "/api/{window}/{id}",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -222,7 +172,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group/{id}",
+        "url_pattern": "/api/v1/windows/{window}/{id}",
         "encoding": "json",
         "sd": "static",
         "method": "GET",
@@ -232,7 +182,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/asset-groups/tabs",
+    "endpoint": "/api/{window}/tabs",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -247,7 +197,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group/tabs",
+        "url_pattern": "/api/v1/windows/{window}/tabs",
         "encoding": "json",
         "sd": "static",
         "method": "GET",
@@ -257,7 +207,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/asset-groups/fields",
+    "endpoint": "/api/{window}/fields",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -272,7 +222,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group/tabs/asset-group/fields",
+        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/fields",
         "encoding": "json",
         "sd": "static",
         "method": "GET",
@@ -282,7 +232,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/asset-groups",
+    "endpoint": "/api/{window}",
     "method": "POST",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -297,7 +247,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group",
+        "url_pattern": "/api/v1/windows/{window}",
         "encoding": "json",
         "sd": "static",
         "method": "POST",
@@ -307,7 +257,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/asset-groups/{id}",
+    "endpoint": "/api/{window}/{id}",
     "method": "PUT",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -322,7 +272,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group/tabs/asset-group/{id}",
+        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/{id}",
         "encoding": "json",
         "sd": "static",
         "method": "PUT",
@@ -332,7 +282,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/asset-groups/{id}",
+    "endpoint": "/api/{window}/{id}",
     "method": "DELETE",
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
@@ -347,538 +297,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/asset-group/tabs/asset-group/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "DELETE",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-}
-,
-
-{
-    "endpoint": "/api/assets",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/assets/tabs",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset/tabs",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/assets/fields",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset/tabs/asset/fields",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/assets/{id}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/assets",
-    "method": "POST",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset",
-        "encoding": "json",
-        "sd": "static",
-        "method": "POST",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/assets/{id}",
-    "method": "PUT",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset/tabs/asset/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "PUT",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/assets/{id}",
-    "method": "DELETE",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset/tabs/asset/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "DELETE",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-}
-,
-
-{
-    "endpoint": "/api/asset-addition",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/asset-addition/{id}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/asset-addition/tabs",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition/tabs",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/asset-addition/fields",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition/tabs/addition/fields",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/asset-addition",
-    "method": "POST",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition",
-        "encoding": "json",
-        "sd": "static",
-        "method": "POST",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/asset-addition/{id}",
-    "method": "PUT",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition/tabs/asset-addition/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "PUT",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/asset-addition/{id}",
-    "method": "DELETE",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/asset-addition/tabs/asset-addition/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "DELETE",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-}
-,
-
-{
-    "endpoint": "/api/products",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/products/{id}",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/products/tabs",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product/tabs",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/products/fields",
-    "method": "GET",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product/tabs/product/fields",
-        "encoding": "json",
-        "sd": "static",
-        "method": "GET",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/products",
-    "method": "POST",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product",
-        "encoding": "json",
-        "sd": "static",
-        "method": "POST",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/products/{id}",
-    "method": "PUT",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product/tabs/product/{id}",
-        "encoding": "json",
-        "sd": "static",
-        "method": "PUT",
-        "disable_host_sanitize": true
-    }
-    ],
-    "input_query_strings": []
-},
-{
-    "endpoint": "/api/products/{id}",
-    "method": "DELETE",
-    "output_encoding": "json",
-    "extra_config": { "auth/validator": {
-    "alg": "HS512",
-    "jwk_url": "https://103.150.93.147:8445/api/v1/auth/jwk",
-    "disable_jwk_security": true,
-    "cache": true
-} },
-    "input_headers": [
-        "Authorization",
-        "Content-Type"
-    ],
-    "backend": [
-    {
-        "url_pattern": "/api/v1/windows/product/tabs/product/{id}",
+        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/{id}",
         "encoding": "json",
         "sd": "static",
         "method": "DELETE",

@@ -3,9 +3,6 @@
 {{$service := .}}
 
 {{ template "AuthService" $service.auth }},
-{{ template "AssetGroupService" $service.assetGroup }},
-{{ template "AssetService" $service.asset }},
-{{ template "AssetAdditionService" $service.assetAddition }},
-{{ template "ProductService" $service.product }}
+{{ template "WindowService" $service.window }}
 
 {{end}}
