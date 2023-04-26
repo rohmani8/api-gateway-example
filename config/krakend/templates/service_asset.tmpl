@@ -1,0 +1,42 @@
+{{define "AssetService"}}
+{
+    "endpoint": "/api/asset/print",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/processes/rv_asset_parent_report",
+        "encoding": "json",
+        "sd": "static",
+        "method": "POST",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+},
+{
+    "endpoint": "/api/asset/option",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/models/a_asset?$select=name,m_product_id",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+}
+{{end}}

@@ -17,7 +17,9 @@
         "disable_host_sanitize": true
     }
     ],
-    "input_query_strings": []
+    "input_query_strings": [
+        "$select"
+    ]
 },
 {
     "endpoint": "/api/{window}/{id}",
@@ -37,7 +39,31 @@
         "disable_host_sanitize": true
     }
     ],
-    "input_query_strings": []
+    "input_query_strings": [
+         "$select"
+    ]
+},
+{
+    "endpoint": "/api/{window}/{id}/print",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/windows/{window}/{id}/print",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": [
+        "$report_type"
+    ]
 },
 {
     "endpoint": "/api/{window}/tabs",
@@ -60,7 +86,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/{window}/fields",
+    "endpoint": "/api/{window}/tabs/{tab}/fields",
     "method": "GET",
     "output_encoding": "json",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
@@ -70,7 +96,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/fields",
+        "url_pattern": "/api/v1/windows/{window}/tabs/{tab}/fields",
         "encoding": "json",
         "sd": "static",
         "method": "GET",
@@ -100,7 +126,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/{window}/{id}",
+    "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "PUT",
     "output_encoding": "json",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
@@ -110,7 +136,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/{id}",
+        "url_pattern": "/api/v1/windows/{window}/tabs/{tab}/{id}",
         "encoding": "json",
         "sd": "static",
         "method": "PUT",
@@ -120,7 +146,7 @@
     "input_query_strings": []
 },
 {
-    "endpoint": "/api/{window}/{id}",
+    "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "DELETE",
     "output_encoding": "json",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
@@ -130,7 +156,7 @@
     ],
     "backend": [
     {
-        "url_pattern": "/api/v1/windows/{window}/tabs/{window}/{id}",
+        "url_pattern": "/api/v1/windows/{window}/tabs/{tab}/{id}",
         "encoding": "json",
         "sd": "static",
         "method": "DELETE",
