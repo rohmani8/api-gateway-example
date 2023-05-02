@@ -4,10 +4,12 @@
   "name": "{{ .env.name }}",
   "timeout": "3000ms",
   "cache_ttl": "300s",
-  "allow_insecure_connections":true,
   "output_encoding": "json",
   "host": ["{{ .env.host }}"],
   "port": {{ .env.port }},
+  "tls_client":{
+    "allow_insecure_connections":true
+  },
   "extra_config": {{ marshal .env.extra_config }},
   "endpoints": [{{ template "Endpoint" .service }}]
 }
