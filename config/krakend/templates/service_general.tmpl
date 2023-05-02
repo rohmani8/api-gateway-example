@@ -1,0 +1,22 @@
+{{define "GeneralService"}}
+{
+    "endpoint": "/api/menus",
+    "method": "GET",
+    "output_encoding": "json",
+    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/models/ad_menu_tree",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": []
+}
+{{end}}
