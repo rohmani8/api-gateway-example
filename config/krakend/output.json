@@ -5,12 +5,12 @@
   "timeout": "3000ms",
   "cache_ttl": "300s",
   "output_encoding": "json",
-  "host": ["https://test.idempiere.org"],
+  "host": ["http://192.168.10.194:8081"],
   "port": 8080,
   "tls_client":{
     "allow_insecure_connections":true
   },
-  "extra_config": {"auth/validator":{"@comment":"JWK shared cache amongst all endpoints of 15 minutes","shared_cache_duration":900},"router":{"return_error_msg":true},"telemetry/logging":{"level":"DEBUG","prefix":"[KRAKEND]","stdout":true,"syslog":false}},
+  "extra_config": {"auth/validator":{"@comment":"JWK shared cache amongst all endpoints of 15 minutes","shared_cache_duration":900},"router":{"auto_options":true,"return_error_msg":true},"security/cors":{"allow_credentials":false,"allow_headers":["*"],"allow_methods":["GET","HEAD","POST","PUT","DELETE"],"allow_origins":["*"],"debug":false,"max_age":"12h"},"telemetry/logging":{"level":"DEBUG","prefix":"[KRAKEND]","stdout":true,"syslog":false}},
   "endpoints": [
 
 
@@ -37,7 +37,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -64,7 +64,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -91,7 +91,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -145,7 +145,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -172,7 +172,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -201,7 +201,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -230,7 +230,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -259,7 +259,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -288,7 +288,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -317,7 +317,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -344,7 +344,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -371,7 +371,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -398,7 +398,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -425,7 +425,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "https://test.idempiere.org/api/v1/auth/jwk",
+    "jwk_url": "http://192.168.10.194:8081/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
