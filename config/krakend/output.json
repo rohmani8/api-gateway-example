@@ -10,7 +10,7 @@
   "tls_client":{
     "allow_insecure_connections":true
   },
-  "extra_config": {"auth/validator":{"@comment":"JWK shared cache amongst all endpoints of 15 minutes","shared_cache_duration":900},"router":{"return_error_msg":true},"telemetry/logging":{"level":"DEBUG","prefix":"[KRAKEND]","stdout":true,"syslog":false}},
+  "extra_config": {"auth/validator":{"@comment":"JWK shared cache amongst all endpoints of 15 minutes","shared_cache_duration":900},"router":{"auto_options":true,"return_error_msg":true},"security/cors":{"allow_credentials":true,"allow_methods":["GET","HEAD","POST"],"allow_origins":["*"],"debug":false,"expose_headers":["Content-Length","Content-Type"],"max_age":"12h"},"telemetry/logging":{"level":"DEBUG","prefix":"[KRAKEND]","stdout":true,"syslog":false}},
   "endpoints": [
 
 
