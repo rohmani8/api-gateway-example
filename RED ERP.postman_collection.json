@@ -1,0 +1,2289 @@
+{
+	"info": {
+		"_postman_id": "326a23ee-f5b2-4eeb-bfa8-f46f6d0f234d",
+		"name": "RED ERP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25988988"
+	},
+	"item": [
+		{
+			"name": "_Template",
+			"item": [
+				{
+					"name": "api/example",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example"
+							]
+						},
+						"description": "Get records."
+					},
+					"response": []
+				},
+				{
+					"name": "api/example/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example/100",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example",
+								"100"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/example/tabs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example/tabs",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example",
+								"tabs"
+							]
+						},
+						"description": "Get window and tabs details by slug of window name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/example/fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example/fields",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example",
+								"fields"
+							]
+						},
+						"description": "Get fields details of a window tab by slug of window namd and tab name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/example",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"isSOTrx\": true,\n\t\"C_DocTypeTarget_ID\": { \"identifier\": \"Standard Order\" },\n\t\"C_BPartner_ID\" : { \"identifier\": \"C&W Construction\" },\n\t\"deliveryViaRule\": \"P\",\n\t\"order-line\": [{\n\t\t\"M_Product_ID\": { \"identifier\": \"Azalea Bush\"},\n\t\t\"qtyEntered\": 1\n\t}],\n\t\"doc-action\": \"CO\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/example/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 100,\n    \"name\": \"My Check Book\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example/100",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example",
+								"100"
+							]
+						},
+						"description": "Update record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/example/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 200084,\n    \"name\": \"Jan-19\",\n    \"endDate\": \"01/30/2019\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/example/1000001",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"example",
+								"1000001"
+							]
+						},
+						"description": "Delete record by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "api/auth/tokens",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"authToken\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"GardenAdmin\",\n    \"password\": \"GardenAdmin\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/tokens",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"tokens"
+							]
+						},
+						"description": "Create authentication token with user name and password. The return token is use as Authorization request header (Bearer {token}) for subsequent api/v1/auth call"
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/tokens one step",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"authToken\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"admin @ gardenworld.com\",\n    \"password\": \"GardenAdmin\",\n    \"parameters\": {\n        \"clientId\": 11,\n        \"roleId\": 102,\n        \"organizationId\": 0,\n        \"warehouseId\": \"\",\n        \"language\": \"en_US\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/tokens",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"tokens"
+							]
+						},
+						"description": "Create authentication token with user name, password, client, role, organization, warehouse and language. The return token is ready for use as Authozation request header (Bearer {token}) for other api call."
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/tokens",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"authToken\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": {{clientId}},\n  \"roleId\": {{roleId}},\n  \"organizationId\": {{organizationId}},\n  \"warehouseId\": {{warehouseId}},\n  \"language\": \"{{language}}\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/tokens",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"tokens"
+							]
+						},
+						"description": "Update authentication token with client, role, organization, warehouse and language. A new token is return for use as Authozation request header (Bearer {token}) for other api call."
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/verify_token",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"authToken\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/verify_token",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"verify_token"
+							]
+						},
+						"description": "Create authentication token with user name and password. The return token is use as Authorization request header (Bearer {token}) for subsequent api/v1/auth call"
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/setup",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"authToken\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/setup?client=11&role=102&organization=50001",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"setup"
+							],
+							"query": [
+								{
+									"key": "client",
+									"value": "11"
+								},
+								{
+									"key": "role",
+									"value": "102"
+								},
+								{
+									"key": "organization",
+									"value": "50001"
+								}
+							]
+						},
+						"description": "Create authentication token with user name and password. The return token is use as Authorization request header (Bearer {token}) for subsequent api/v1/auth call"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asset-Group",
+			"item": [
+				{
+					"name": "api/asset-groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group"
+							]
+						},
+						"description": "Get records."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-groups/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group/50000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group",
+								"50000"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-groups/tabs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group/tabs",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group",
+								"tabs"
+							]
+						},
+						"description": "Get window and tabs details by slug of window name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-groups/fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group/tabs/asset-group/fields",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group",
+								"tabs",
+								"asset-group",
+								"fields"
+							]
+						},
+						"description": "Get fields details of a window tab by slug of window namd and tab name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-groups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isSOTrx\": true,\n    \"AD_Org_ID\": {\n        \"id\": 11\n    },\n    \"Description\": \"Foods\",\n    \"Help\": \"All Foods\",\n    \"IsActive\": true,\n    \"IsDefault\": false,\n    \"IsDepreciated\": true,\n    \"IsFixedAsset\": false,\n    \"IsOneAssetPerUOM\": false,\n    \"IsOwned\": true,\n    \"Name\": \"Foods\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-groups/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000000,\n    \"Description\": \"Just Example Creating Asset Group\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group/tabs/asset-group/1000000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group",
+								"tabs",
+								"asset-group",
+								"1000000"
+							]
+						},
+						"description": "Update record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-groups/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000000\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-group/tabs/asset-group/1000001",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-group",
+								"tabs",
+								"asset-group",
+								"1000001"
+							]
+						},
+						"description": "Delete record by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asset",
+			"item": [
+				{
+					"name": "api/assets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset"
+							]
+						},
+						"description": "Get records."
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/1000000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"1000000"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/print",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"report-type\" : \"PDF\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/print",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"print"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/option",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"report-type\" : \"PDF\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/option",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"option"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/tabs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/tabs",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"tabs"
+							]
+						},
+						"description": "Get window and tabs details by slug of window name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/tabs/asset/fields",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"tabs",
+								"asset",
+								"fields"
+							]
+						},
+						"description": "Get fields details of a window tab by slug of window namd and tab name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isSOTrx\": true,\n    \"AD_Org_ID\": {\n        \"id\": 11\n    },\n    \"A_Asset_Group_ID\": {\n        \"id\": 50006\n    },\n    \"A_Asset_Status\": {\n        \"id\": \"AC\"\n    },\n    \"AssetActivationDate\": \"2023-03-24\",\n    \"AssetServiceDate\": \"2023-03-24\",\n    \"Help\": \"CreatedFrom InvoiceLine\",\n    \"InventoryNo\": \"1000000\",\n    \"IsActive\": true,\n    \"IsDepreciated\": false,\n    \"IsDisposed\": false,\n    \"IsFullyDepreciated\": false,\n    \"IsInPosession\": false,\n    \"IsOwned\": true,\n    \"M_Locator_ID\": {\n        \"id\": 101\n    },\n    \"M_Product_ID\": {\n        \"id\": 200001\n    },\n    \"Name\": \"Asset Vehicle-Light, Inc-10000010\",\n    \"Value\": \"Asset Vehicle-Light, Inc-10000010\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/{id}",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isSOTrx\": true,\n    \"AD_Org_ID\": {\n        \"id\": 11\n    },\n    \"A_Asset_Group_ID\": {\n        \"id\": 50006\n    },\n    \"A_Asset_Status\": {\n        \"id\": \"AC\"\n    },\n    \"AssetActivationDate\": \"2023-03-24\",\n    \"AssetServiceDate\": \"2023-03-24\",\n    \"Help\": \"CreatedFrom InvoiceLine\",\n    \"InventoryNo\": \"1000000\",\n    \"IsActive\": true,\n    \"IsDepreciated\": false,\n    \"IsDisposed\": false,\n    \"IsFullyDepreciated\": false,\n    \"IsInPosession\": false,\n    \"IsOwned\": true,\n    \"M_Locator_ID\": {\n        \"id\": 101\n    },\n    \"M_Product_ID\": {\n        \"id\": 200001\n    },\n    \"Name\": \"Asset Vehicle-Light, Inc-10000010\",\n    \"Value\": \"Asset Vehicle-Light, Inc-10000010\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000000,\n    \"Name\": \"Asset Vehicle-Water, Inc-10000010\",\n    \"Value\": \"Asset Vehicle-Water, Inc-10000010\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/tabs/asset/1000000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"tabs",
+								"asset",
+								"1000000"
+							]
+						},
+						"description": "Update record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/assets/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000003\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/tabs/asset/1000003",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"tabs",
+								"asset",
+								"1000003"
+							]
+						},
+						"description": "Delete record by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asset-Addition",
+			"item": [
+				{
+					"name": "api/asset-addition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-addition",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-addition"
+							]
+						},
+						"description": "Get records."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-addition/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-addition/1000002",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-addition",
+								"1000002"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-addition/fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-addition/tabs/addition/fields",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-addition",
+								"tabs",
+								"addition",
+								"fields"
+							]
+						},
+						"description": "Get fields details of a window tab by slug of window namd and tab name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-addition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isSOTrx\": true,\n    \"AD_Org_ID\": {\n        \"id\": 11\n    },\n    \"A_Asset_ID\": {\n        \"id\": 1000001\n    },\n    \"A_CapvsExp\": {\n        \"id\": \"Cap\"\n    },\n    \"A_CreateAsset\": false,\n    \"A_QTY_Current\": 1.0,\n    \"A_Salvage_Value\": 0,\n    \"A_SourceType\": {\n        \"id\": \"MAN\"\n    },\n    \"AssetAmtEntered\": 1200,\n    \"AssetSourceAmt\": 1200,\n    \"AssetValueAmt\": 1200.00,\n    \"C_ConversionType_ID\": {\n        \"id\": 114\n    },\n    \"C_Currency_ID\": {\n        \"id\": 100\n    },\n    \"C_DocType_ID\": {\n        \"id\": 200001\n    },\n    \"DateAcct\": \"2023-03-12\",\n    \"DateDoc\": \"2023-03-12\",\n    \"DocumentNo\": \"1000001\",\n    \"PostingType\": {\n        \"id\": \"A\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-addition",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-addition"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-addition/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DocStatus\": {\n        \"id\": \"CO\"\n    },\n    \"DocumentNo\": \"1000000\",\n    \"id\": 1000003\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset/tabs/asset/1000003",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset",
+								"tabs",
+								"asset",
+								"1000003"
+							]
+						},
+						"description": "Update record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-addition/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000003\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-addition/tabs/addition/1000002",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-addition",
+								"tabs",
+								"addition",
+								"1000002"
+							]
+						},
+						"description": "Delete record by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asset-Disposal",
+			"item": [
+				{
+					"name": "api/asset-disposal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal"
+							]
+						},
+						"description": "Get records."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal/1000000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal",
+								"1000000"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal/{id}/print",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal/1000000/print",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal",
+								"1000000",
+								"print"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal/tabs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal/tabs",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal",
+								"tabs"
+							]
+						},
+						"description": "Get window and tabs details by slug of window name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal/fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal/tabs/asset-disposal/fields",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal",
+								"tabs",
+								"asset-disposal",
+								"fields"
+							]
+						},
+						"description": "Get fields details of a window tab by slug of window namd and tab name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"A_Accumulated_Depr\": 0,\n    \"A_Accumulated_Depr_Delta\": 0,\n    \"A_Asset_ID\": {\n        \"id\": 1000001\n    },\n    \"A_Disposal_Amt\": 1100,\n    \"A_Disposed_Date\": \"2023-03-12\",\n    \"A_Disposed_Method\": {\n        \"id\": \"T1\"\n    },\n    \"A_Disposed_Reason\": {\n        \"id\": \"D\"\n    },\n    \"C_DocType_ID\": {\n        \"id\": 200003\n    },\n    \"DateAcct\": \"2023-03-12\",\n    \"DateDoc\": \"2023-03-12\",\n    \"Description\": \"Test Create Asset Disposal\",\n    \"DocStatus\": {\n        \"id\": \"DR\"\n    },\n    \"DocumentNo\": \"1000000\",\n    \"Expense\": 0,\n    \"IsApproved\": false,\n    \"IsDisposed\": false,\n    \"PostingType\": {\n        \"id\": \"A\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DocStatus\": {\n        \"id\": \"CO\"\n    },\n    \"DocumentNo\": \"1000000\",\n    \"id\": 1000003\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal/tabs/asset-disposal/1000003",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal",
+								"tabs",
+								"asset-disposal",
+								"1000003"
+							]
+						},
+						"description": "Update record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/asset-disposal/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000003\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/asset-disposal/tabs/asset-disposal/1000003",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"asset-disposal",
+								"tabs",
+								"asset-disposal",
+								"1000003"
+							]
+						},
+						"description": "Delete record by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "api/products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product/50014",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product",
+								"50014"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/{id}/print",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product/200002/print",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product",
+								"200002",
+								"print"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/tabs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product/tabs",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product",
+								"tabs"
+							]
+						},
+						"description": "Get window and tabs details by slug of window name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product/tabs/product/fields",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product",
+								"tabs",
+								"product",
+								"fields"
+							]
+						},
+						"description": "Get fields details of a window tab by slug of window namd and tab name."
+					},
+					"response": []
+				},
+				{
+					"name": "api/products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"AD_Org_ID\": {\n        \"id\": 0\n    },\n    \"C_TaxCategory_ID\": {\n        \"id\": 107\n    },\n    \"C_UOM_ID\": {\n        \"id\": 100\n    },\n    \"Discontinued\": false,\n    \"GuaranteeDays\": 0,\n    \"GuaranteeDaysMin\": 0,\n    \"IsActive\": true,\n    \"IsExcludeAutoDelivery\": false,\n    \"IsKanban\": false,\n    \"IsManufactured\": false,\n    \"IsPhantom\": false,\n    \"IsPurchased\": true,\n    \"IsSelfService\": true,\n    \"IsSold\": true,\n    \"IsSummary\": false,\n    \"IsWebStoreFeatured\": false,\n    \"M_Product_Category_ID\": {\n        \"id\": 200001\n    },\n    \"Name\": \"Nasi Goreng\",\n    \"ProductType\": {\n        \"id\": \"A\"\n    },\n    \"SalesRep_ID\": {\n        \"id\": 100\n    },\n    \"Value\": \"Nasi Goreng\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product"
+							]
+						},
+						"description": "Example to create and complete a sales order document."
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 50014,\n    \"Name\": \"Bag 71 Kg\",\n    \"Value\": \"Bag71\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product/tabs/product/50014",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product",
+								"tabs",
+								"product",
+								"50014"
+							]
+						},
+						"description": "Update record by id"
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1000000\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/product/tabs/product/1000000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"product",
+								"tabs",
+								"product",
+								"1000000"
+							]
+						},
+						"description": "Delete record by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "api/menus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/api/menus",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"menus"
+							]
+						},
+						"description": "Get tab record by id"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8080",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "eyJraWQiOiJpZGVtcGllcmUiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHYXJkZW5BZG1pbiIsIkFEX0xhbmd1YWdlIjoiZW5fVVMiLCJBRF9TZXNzaW9uX0lEIjoxMDAwMzAwLCJBRF9Vc2VyX0lEIjoxMDEsIkFEX1JvbGVfSUQiOjEwMiwiQURfT3JnX0lEIjowLCJpc3MiOiJpZGVtcGllcmUub3JnIiwiQURfQ2xpZW50X0lEIjoxMSwiZXhwIjoxNjc5NjM0ODU1fQ.-2S9-ooHGWCfPGYdXuqVjYRQdFP5ohHEr3UpEAKQBsEm1RnxoZgfb1kJNHT4157oVc61rDJIHqHeS3LzYKliNA",
+			"type": "string"
+		}
+	]
+}
