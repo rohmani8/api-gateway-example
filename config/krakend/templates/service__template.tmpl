@@ -3,7 +3,7 @@
     "endpoint": "/api/template",
     "method": "GET",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -23,7 +23,7 @@
     "endpoint": "/api/template/{id}",
     "method": "GET",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -43,7 +43,7 @@
     "endpoint": "/api/template/tabs",
     "method": "GET",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -63,7 +63,7 @@
     "endpoint": "/api/template/fields",
     "method": "GET",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -83,7 +83,7 @@
     "endpoint": "/api/template",
     "method": "POST",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -103,7 +103,7 @@
     "endpoint": "/api/template/{id}",
     "method": "PUT",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -123,7 +123,7 @@
     "endpoint": "/api/template/{id}",
     "method": "DELETE",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"

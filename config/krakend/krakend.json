@@ -1,12 +1,11 @@
 {
   "$schema": "https://www.krakend.io/schema/v3.json",
   "version": 3,
-  "name": "{{ .env.name }}",
   "timeout": "3000ms",
   "cache_ttl": "300s",
   "output_encoding": "json",
-  "host": ["{{ .env.host }}"],
-  "port": {{ .env.port }},
+  "host": ["{{ env "BACKEND_HOST" }}"],
+  "port": {{ env "KRAKEND_PORT" }},
   "tls_client":{
     "allow_insecure_connections":true
   },

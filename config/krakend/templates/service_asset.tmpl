@@ -3,7 +3,7 @@
     "endpoint": "/api/asset/print",
     "method": "GET",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
@@ -23,7 +23,7 @@
     "endpoint": "/api/asset/option",
     "method": "GET",
     "output_encoding": "json",
-    "extra_config": { {{include "jwt_validator.tmpl"}} },
+    "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
         "Content-Type"
