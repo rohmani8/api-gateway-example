@@ -1,7 +1,6 @@
-FROM devopsfaith/krakend:2.2 as builder
+FROM devopsfaith/krakend:2.3.1 as builder
 ARG ENV=dev
 
-COPY config/krakend/krakend.tmpl .
 COPY config/krakend .
 
 ## Save temporary file to /tmp to avoid permission errors
@@ -15,10 +14,7 @@ RUN FC_ENABLE=1 \
 # The linting needs the final krakend.json file
 RUN krakend check -c /etc/krakend/output.json --lint
 
-FROM devopsfaith/krakend
-COPY --from=builder --chown=krakend /etc/krakend/output.json .
-
-EXPOSE 8080
-
-# Uncomment with Enterprise image:
-# COPY LICENSE /etc/krakend/LICENSE
+FROM devopsfaith/krakend:2.3.1
+COPY --from=builder /etc/krakend/output.json ./krakend.json
+RUN chown root:root -R ./krakend.json
+RUN chmod 775 -R ./krakend.json

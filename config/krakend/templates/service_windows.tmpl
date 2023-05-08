@@ -108,7 +108,7 @@
 {
     "endpoint": "/api/{window}",
     "method": "POST",
-    "output_encoding": "json",
+    "output_encoding": "no-op",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -128,7 +128,7 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "PUT",
-    "output_encoding": "json",
+    "output_encoding": "no-op",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -148,7 +148,7 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "DELETE",
-    "output_encoding": "json",
+    "output_encoding": "no-op",
     "extra_config": { {{include "jwt_validator.tmpl"}} },
     "input_headers": [
         "Authorization",

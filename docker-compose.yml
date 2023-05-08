@@ -3,41 +3,8 @@ services:
   krakend:
     image: devopsfaith/krakend:watch
     ports:
-      - 8080:8080
-      - 9091:9091 #localhost:9091/metrics
-    environment:
-      - FC_ENABLE=1
-      - FC_OUT=/etc/krakend/output.json
-      - FC_PARTIALS=/etc/krakend/partials
-      - FC_SETTINGS=/etc/krakend/settings/dev
-      - FC_TEMPLATES=/etc/krakend/templates
-    command: ["run", "-dc", "/etc/krakend/krakend.json"]
-    # depends_on:
-    #   - idempiere
+      - ${KRAKEND_PORT}:8080
+    env_file: .env
+    command: ["run","-d", "-c", "/etc/krakend/krakend.json"]
     volumes:
       - ./config/krakend:/etc/krakend
-#   idempiere:
-#     image: idempiereofficial/idempiere:10-release
-#     volumes:
-#       - idempiere_config:/opt/idempiere/configuration
-#       - idempiere_plugins:/opt/idempiere/plugins
-#     environment:
-#       - TZ=Asia/Jakarta
-#     ports:
-#       - 8443:8443
-#       - 12612:12612
-
-#   postgres:
-#     image: postgres:12
-#     volumes:
-#       - idempiere_data:/var/lib/postgresql/data
-#     environment:
-#       - TZ=Asia/Jakarta
-#       - POSTGRES_PASSWORD=postgres
-#     ports:
-#       - 5432:5432
-
-# volumes:
-#   idempiere_data:
-#   idempiere_plugins:
-#   idempiere_config:
