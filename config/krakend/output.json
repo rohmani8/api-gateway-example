@@ -3,7 +3,7 @@
   "version": 3,
   "timeout": "3000ms",
   "cache_ttl": "300s",
-  "output_encoding": "json",
+  "output_encoding": "no-op",
   "host": ["http://host.docker.internal:8081"],
   "port": 8080,
   "tls_client":{
@@ -18,7 +18,6 @@
 {
     "endpoint": "/api/auth/tokens",
     "method": "POST",
-    "output_encoding": "no-op",
     "backend": [
     {
         "url_pattern": "/api/v1/auth/tokens",
@@ -33,7 +32,6 @@
 {
     "endpoint": "/api/auth/tokens",
     "method": "PUT",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -60,7 +58,6 @@
 {
     "endpoint": "/api/auth/verify_token",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -141,7 +138,7 @@
 {
     "endpoint": "/api/asset/print",
     "method": "GET",
-    "output_encoding": "json",
+    
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -168,7 +165,7 @@
 {
     "endpoint": "/api/asset/option",
     "method": "GET",
-    "output_encoding": "json",
+    
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -197,7 +194,6 @@
 {
     "endpoint": "/api/menus",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -226,7 +222,6 @@
 {
     "endpoint": "/api/{window}",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -255,7 +250,6 @@
 {
     "endpoint": "/api/{window}/{id}",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -284,7 +278,6 @@
 {
     "endpoint": "/api/{window}/{id}/print",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -313,7 +306,6 @@
 {
     "endpoint": "/api/{window}/tabs",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -340,7 +332,6 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/fields",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -367,7 +358,6 @@
 {
     "endpoint": "/api/{window}",
     "method": "POST",
-    "output_encoding": "no-op",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -394,7 +384,6 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "PUT",
-    "output_encoding": "no-op",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
@@ -421,7 +410,6 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "DELETE",
-    "output_encoding": "no-op",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
     "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",

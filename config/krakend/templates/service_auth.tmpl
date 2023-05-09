@@ -2,7 +2,6 @@
 {
     "endpoint": "/api/auth/tokens",
     "method": "POST",
-    "output_encoding": "no-op",
     "backend": [
     {
         "url_pattern": "/api/v1/auth/tokens",
@@ -17,7 +16,6 @@
 {
     "endpoint": "/api/auth/tokens",
     "method": "PUT",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -37,7 +35,6 @@
 {
     "endpoint": "/api/auth/verify_token",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",

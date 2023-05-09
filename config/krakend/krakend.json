@@ -3,7 +3,7 @@
   "version": 3,
   "timeout": "3000ms",
   "cache_ttl": "300s",
-  "output_encoding": "json",
+  "output_encoding": "{{ env "KRAKEND_ENCODING" }}",
   "host": ["{{ env "BACKEND_HOST" }}"],
   "port": {{ env "KRAKEND_PORT" }},
   "tls_client":{

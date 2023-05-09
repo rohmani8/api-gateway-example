@@ -2,7 +2,6 @@
 {
     "endpoint": "/api/{window}",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -24,7 +23,6 @@
 {
     "endpoint": "/api/{window}/{id}",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -46,7 +44,6 @@
 {
     "endpoint": "/api/{window}/{id}/print",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -68,7 +65,6 @@
 {
     "endpoint": "/api/{window}/tabs",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -88,7 +84,6 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/fields",
     "method": "GET",
-    "output_encoding": "json",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -108,7 +103,6 @@
 {
     "endpoint": "/api/{window}",
     "method": "POST",
-    "output_encoding": "no-op",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -128,7 +122,6 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "PUT",
-    "output_encoding": "no-op",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
@@ -148,7 +141,6 @@
 {
     "endpoint": "/api/{window}/tabs/{tab}/{id}",
     "method": "DELETE",
-    "output_encoding": "no-op",
     "extra_config": { {{template "validator_token.tmpl"}} },
     "input_headers": [
         "Authorization",
