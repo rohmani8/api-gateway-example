@@ -3,7 +3,7 @@ services:
   krakend:
     image: devopsfaith/krakend:watch
     ports:
-      - ${KRAKEND_PORT}:8080
+      - ${KRAKEND_PORT}:${KRAKEND_PORT}
     env_file: .env
     command: ["run","-d", "-c", "/etc/krakend/krakend.json"]
     volumes:

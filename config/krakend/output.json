@@ -4,8 +4,8 @@
   "timeout": "3000ms",
   "cache_ttl": "300s",
   "output_encoding": "no-op",
-  "host": ["http://host.docker.internal:8081"],
-  "port": 8080,
+  "host": ["http://185.201.9.71:8010"],
+  "port": 9000,
   "tls_client":{
     "allow_insecure_connections":true
   },
@@ -34,7 +34,7 @@
     "method": "PUT",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -60,7 +60,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -87,7 +87,7 @@
     "output_encoding": "json",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -141,7 +141,7 @@
     
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -168,7 +168,7 @@
     
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -196,7 +196,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -224,7 +224,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -252,7 +252,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -280,7 +280,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -308,7 +308,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -334,7 +334,7 @@
     "method": "GET",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -360,7 +360,7 @@
     "method": "POST",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -386,7 +386,7 @@
     "method": "PUT",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
@@ -412,7 +412,7 @@
     "method": "DELETE",
     "extra_config": { "auth/validator": {
     "alg": "HS512",
-    "jwk_url": "http://host.docker.internal:8081/api/v1/auth/jwk",
+    "jwk_url": "http://185.201.9.71:8010/api/v1/auth/jwk",
     "disable_jwk_security": true,
     "cache": true,
     "cache_duration": 3600,
