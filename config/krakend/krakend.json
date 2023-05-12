@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.krakend.io/schema/v3.json",
   "version": 3,
-  "timeout": "3000ms",
+  "timeout": "6000ms",
   "cache_ttl": "300s",
   "output_encoding": "{{ env "KRAKEND_ENCODING" }}",
   "host": ["{{ env "BACKEND_HOST" }}"],
