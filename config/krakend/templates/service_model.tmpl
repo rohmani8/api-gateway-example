@@ -1,0 +1,26 @@
+{{define "ModelService"}}
+{
+    "endpoint": "/api/models/{model}",
+    "method": "GET",
+    "extra_config": { {{template "validator_token.tmpl"}} },
+    "input_headers": [
+        "Authorization",
+        "Content-Type"
+    ],
+    "backend": [
+    {
+        "url_pattern": "/api/v1/models/{model}",
+        "encoding": "json",
+        "sd": "static",
+        "method": "GET",
+        "disable_host_sanitize": true
+    }
+    ],
+    "input_query_strings": [
+        "$select",
+        "$filter",
+        "$top",
+        "$limit"
+    ]
+}
+{{ end }}
